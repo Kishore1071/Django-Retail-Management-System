@@ -1,1 +1,11 @@
 # Django-Retail-Management-System
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: brown;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+
+#sidebar {
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#sidebar.collapsed {
+    margin-left: -250px;
+}
+
+#sidebar .nav-link {
+    color: #fff;
+}
+
+#sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+#content {
+    transition: margin-left 0.3s;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+#sidebar.collapsed + #content {
+    margin-left: 0;
+}
+
+.page-title {
+    margin-top: 20px;
+}
+
+.content-container {
+    margin-top: 20px;
+}
+
+.route-container {
+    margin: 20px;
+    text-align: end;
+}
+
+.icons {
+    font-size: 20px;
+}
+
+.form {
+    width: 40%;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+}

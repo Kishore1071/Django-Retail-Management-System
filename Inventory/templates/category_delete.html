@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Category
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center fs-3 page-title">Delet Category</h1>
+</div>
+
+<div class="container content-container">
+
+    <div class="route-container">
+        <a href="{% url 'category_list' %}">
+            <button class="btn btn-secondary">Back</button>
+        </a>
+    </div>
+
+    <form action="" method="POST" class="form">
+    
+        {% csrf_token %}
+    
+        <p> Are you sure want to delete this category? <mark>"{{category}}"</mark> </p>
+    
+        <input type="submit" value="Delete Category" class="form-control btn btn-danger">
+    </form>
+
+</div>
+
+{% endblock %}

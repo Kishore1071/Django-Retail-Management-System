@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Create Category
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center fs-3 page-title">{{title}} Category</h1>
+</div>
+
+<div class="container content-container">
+
+    <div class="route-container">
+        <a href="{% url 'category_list' %}">
+            <button class="btn btn-secondary">Back</button>
+        </a>
+    </div>
+
+    <form action="" method="POST" class="form">
+    
+        {% csrf_token %}
+    
+        {{form.as_p}}
+    
+        <input type="submit" value="{{button_name}} Category" class="form-control btn btn-primary">
+    </form>
+
+</div>
+
+{% endblock %}

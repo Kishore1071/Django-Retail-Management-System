@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Bill Form{% endblock %}
+{% block content %}
+<h2>{{ bill_form.instance.pk|yesno:"Edit Bill,Create Bill" }}</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ bill_form.as_p }}
+    <h4>Products</h4>
+    {{ formset.management_form }}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Delete?</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for form in formset %}
+            <tr>
+                <td>{{ form.product }}</td>
+                <td>{{ form.quantity }}</td>
+                <td>
+                    {% if form.DELETE %}
+                        {{ form.DELETE }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'bill_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
